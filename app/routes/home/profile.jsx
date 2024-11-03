@@ -1,6 +1,5 @@
 import { Fragment, useState } from 'react'
 import { Button } from '~/components/button'
-import { DecoderText } from '~/components/decoder-text'
 import { Divider } from '~/components/divider'
 import { Heading } from '~/components/heading'
 import { Section } from '~/components/section'
@@ -12,7 +11,17 @@ import styles from './profile.module.css'
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
     <Heading className={styles.title} data-visible={visible} level={3} id={titleId}>
-      <DecoderText text="Hi there" start={visible} delay={500} />
+    <div className={styles.tag} aria-hidden>
+                <Divider
+                  notchWidth="64px"
+                  notchHeight="8px"
+                  collapsed={!visible}
+                  collapseDelay={1000}
+                />
+                <div className={styles.tagText} data-visible={visible}>
+                  About me
+                </div>
+              </div>
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
     Hello, I'm Kevin, a cybersecurity enthusiast based in Manado, Indonesia. I'm actively honing my skills through self-learning and participation in CTF (Capture The Flag) challenges. I'm also proficient in Python programming..
@@ -54,17 +63,6 @@ export const Profile = ({ id, visible, sectionRef }) => {
               </Button>
             </div>
             <div className={styles.column}>
-              <div className={styles.tag} aria-hidden>
-                <Divider
-                  notchWidth="64px"
-                  notchHeight="8px"
-                  collapsed={!visible}
-                  collapseDelay={1000}
-                />
-                <div className={styles.tagText} data-visible={visible}>
-                  About me
-                </div>
-              </div>
                 <svg className={styles.svg} data-visible={visible} viewBox="0 0 136 766">
                   <use href={`${katakana}#katakana-profile`} />
                 </svg>
