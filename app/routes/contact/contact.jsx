@@ -37,14 +37,22 @@ export const Contact = () => {
   // Menggunakan Formspree
   const [formState, handleSubmit] = useForm("xdkoepbp");
 
+  // Log initial formState
+  console.log("Initial formState:", formState);
+
+  const handleSubmitWithLog = (e) => {
+    console.log("Form submitted with:", email.value, message.value);
+    handleSubmit(e);
+  };
+
   return (
     <Section className={styles.contact}>
       <Transition unmount in={!formState.succeeded} timeout={1600}>
         {({ status, nodeRef }) => (
           <Form
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmitWithLog}
             className={styles.form}
-            method="post"
+            method="POST"
             ref={nodeRef}
           >
             <Heading
