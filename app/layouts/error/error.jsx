@@ -1,15 +1,15 @@
-import notFoundPoster from '~/assets/notfound.jpg';
-import notFoundVideo from '~/assets/notfound.mp4';
-import flatlinePoster from '~/assets/flatline.png';
-import flatlineVideo from '~/assets/flatline.mp4';
-import { Button } from '~/components/button';
-import { DecoderText } from '~/components/decoder-text';
-import { Heading } from '~/components/heading';
-import { Text } from '~/components/text';
-import { Transition } from '~/components/transition';
-import styles from './error.module.css';
-import { Image } from '~/components/image';
-import flatlineSkull from './error-flatline.svg';
+import flatlineVideo from '~/assets/flatline.mp4'
+import flatlinePoster from '~/assets/flatline.png'
+import notFoundPoster from '~/assets/notfound.jpg'
+import notFoundVideo from '~/assets/notfound.mp4'
+import { Button } from '~/components/button'
+import { DecoderText } from '~/components/decoder-text'
+import { Heading } from '~/components/heading'
+import { Image } from '~/components/image'
+import { Text } from '~/components/text'
+import { Transition } from '~/components/transition'
+import flatlineSkull from './error-flatline.svg'
+import styles from './error.module.css'
 
 export function Error({ error }) {
   const flatlined = !error.status;
@@ -43,15 +43,15 @@ export function Error({ error }) {
         <style
           dangerouslySetInnerHTML={{
             __html: `
-            [data-theme='dark'] {
-              --primary: oklch(69.27% 0.242 25.41);
-              --accent: oklch(69.27% 0.242 25.41);
-            }
-            [data-theme='light'] {
-              --primary: oklch(56.29% 0.182 26.5);
-              --accent: oklch(56.29% 0.182 26.5);
-            }
-          `,
+              [data-theme='dark'] {
+                --primary: oklch(69.27% 0.242 25.41);
+                --accent: oklch(69.27% 0.242 25.41);
+              }
+              [data-theme='light'] {
+                --primary: oklch(56.29% 0.182 26.5);
+                --accent: oklch(56.29% 0.182 26.5);
+              }
+            `,
           }}
         />
       )}
@@ -94,16 +94,25 @@ export function Error({ error }) {
                     <DecoderText text={summary} start={visible} delay={300} />
                   </Heading>
                 )}
-                <Text className={styles.description} data-visible={visible} as="p">
-                  {message}
-                </Text>
+                {flatlined ? (
+                  <Text className={styles.description} data-visible={visible} as="p">
+                    {/* Pesan custom Anda di sini */}
+                    Maaf, WebGL tidak tersedia di browser Anda. 
+                    Untuk Chrome, silahkan masuk ke Setting,
+                    Pada bagian System, Aktifkan "Use graphics acceleration when available"
+                  </Text> 
+                ) : (
+                  <Text className={styles.description} data-visible={visible} as="p">
+                    {message}
+                  </Text>
+                )}
                 {flatlined ? (
                   <Button
                     secondary
                     iconHoverShift
                     className={styles.button}
                     data-visible={visible}
-                    href="https://www.youtube.com/watch?v=EuQzHGcsjlA"
+                    href="https://www.tiktok.com/@christyjkt48/video/7429995741780954374?q=christy&t=1730714580171"
                     icon="chevron-right"
                   >
                     Emotional support
