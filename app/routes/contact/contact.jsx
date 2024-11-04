@@ -16,7 +16,6 @@ import { baseMeta } from '~/utils/meta'
 import { cssProps, msToNum, numToMs } from '~/utils/style'
 import styles from './contact.module.css'
 
-// Metadata untuk halaman ini
 export const meta = () => {
   return baseMeta({
     title: 'Contact',
@@ -35,9 +34,8 @@ export const Contact = () => {
   const { state } = useNavigation();
   const sending = state === 'submitting';
   
-  // Menggunakan Formspree dengan ID dari environment variable
-  const formspreeFormId = process.env.FORMSPREE_FORM_ID; // Ambil Form ID dari environment
-  const [formState, handleSubmit] = useForm(formspreeFormId);
+  // Menggunakan Formspree
+  const [formState, handleSubmit] = useForm("xdkoepbp");
 
   return (
     <Section className={styles.contact}>
@@ -63,7 +61,7 @@ export const Contact = () => {
               data-status={status}
               style={getDelay(tokens.base.durationXS, initDelay, 0.4)}
             />
-            {/* Hidden honeypot field untuk mengidentifikasi bot */}
+            {/* Hidden honeypot field to identify bots */}
             <Input
               className={styles.botkiller}
               label="Name"
@@ -159,7 +157,6 @@ export const Contact = () => {
   );
 };
 
-// Fungsi untuk menambahkan delay pada animasi
 function getDelay(delayMs, offset = numToMs(0), multiplier = 1) {
   const numDelay = msToNum(delayMs) * multiplier;
   return cssProps({ delay: numToMs((msToNum(offset) + numDelay).toFixed(0)) });
