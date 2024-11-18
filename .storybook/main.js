@@ -1,4 +1,4 @@
-import { mergeConfig } from 'vite';
+import { mergeConfig } from 'vite'
 
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
@@ -21,7 +21,7 @@ const config = {
     return mergeConfig(config, {
       assetsInclude: ['**/*.glb', '**/*.hdr', '**/*.glsl'],
       build: {
-        assetsInlineLimit: 1024,
+        assetsInlineLimit: 0,
       },
     });
   },
