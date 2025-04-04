@@ -10,7 +10,7 @@ export const Certificates = () => {
   const certificates = [
     {
       title: "Google Play Store Listing Certificate",
-      image: "/app/assets/aa.jpg",
+      image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/cert/cert1.jpg",
       link: "https://www.credential.net/6f4c7e6e-a9e8-4753-8bbf-1a035dc09035",
       legalitas: "Google Play Store Listing Certificate",
       description: "Certification for optimizing listings in Google Play Store.",
