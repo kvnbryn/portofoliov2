@@ -7,6 +7,7 @@ import { Text } from '~/components/text'
 import { Transition } from '~/components/transition'
 import katakana from './katakana.svg'
 import styles from './profile.module.css'
+import { Link } from '~/components/link';
 
 const ProfileText = ({ visible, titleId }) => (
   <Fragment>
@@ -24,11 +25,16 @@ const ProfileText = ({ visible, titleId }) => (
               </div>
     </Heading>
     <Text className={styles.description} data-visible={visible} size="l" as="p">
-    Hello, I'm Kevin, a cybersecurity enthusiast based in Manado, Indonesia. I'm actively honing my skills through self-learning and participation in CTF (Capture The Flag) challenges. I'm also proficient in Python programming..
-    </Text>
-    <Text className={styles.description} data-visible={visible} size="l" as="p">
-    I'm always eager to learn and contribute to the cybersecurity community. If you share the same passion or would like to discuss potential projects, feel free to reach out to me
-    </Text>
+  Hello, I’m Kevin — a cybersecurity enthusiast based in Manado, Indonesia. I’m actively sharpening my skills through self-learning, exploring real-world vulnerabilities, and participating in CTF (Capture The Flag) challenges. I’m also proficient in Python and enjoy digging into low-level systems.
+</Text>
+<Text className={styles.description} data-visible={visible} size="l" as="p">
+  You can find some of my hands-on exercises and labs on{' '}
+  <Link href="https://tryhackme.com/p/kvnbryank" target="_blank" rel="noopener noreferrer">TryHackMe</Link>.
+</Text>
+<Text className={styles.description} data-visible={visible} size="l" as="p">
+  I'm always eager to learn and contribute to the cybersecurity community. If you share the same passion or would like to explore a project together, feel free to reach out.
+</Text>
+
   </Fragment>
 );
 

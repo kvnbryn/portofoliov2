@@ -9,10 +9,10 @@ import styles from "./Certificate.module.css"
 export const Certificates = () => {
   const certificates = [
     {
-      title: "Google Play Store Listing Certificate",
+      title: "C3SA Certificate",
       image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/cert/cert1.jpg",
-      link: "https://www.credential.net/6f4c7e6e-a9e8-4753-8bbf-1a035dc09035",
-      legalitas: "Google Play Store Listing Certificate",
+      link: "https://app.kajabi.com/certificates/ec1b5c30",
+      legalitas: "C3SA Certificate",
       description: "Certification for optimizing listings in Google Play Store.",
     },
     {
@@ -21,6 +21,20 @@ export const Certificates = () => {
       link: "https://www.dicoding.com/certificates/0LZ04NNJ3P65",
       legalitas: "Dasar Visualisasi Data",
       description: "Recognized for outstanding performance in the program.",
+    },
+    {
+      title: "Google Play Store Listing",
+      image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/cert/aa.jpg",
+      link: "https://www.credential.net/6f4c7e6e-a9e8-4753-8bbf-1a035dc09035",
+      legalitas: "Google Play Store Listing",
+      description: "Introduction to fundamental cloud computing concepts.",
+    },
+    {
+      title: "Develop Skills for Research",
+      image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/cert/eCertficate28Nov_Kevin%20Bryan%20Kalengkongan_page-0001.jpg",
+      link: "https://www.credential.net/6f4c7e6e-a9e8-4753-8bbf-1a035dc09035",
+      legalitas: "Develop Skills for Research",
+      description: "Completion of frontend web development program.",
     },
   ];
 
@@ -54,7 +68,7 @@ export const Certificates = () => {
                   notchWidth="64px"
                   notchHeight="8px"
                   collapsed={!visible}
-                  collapseDelay={300} // Delay sync with Certificates text
+                  collapseDelay={300}
                 />
                 <div className={styles.tagText} data-visible={visible}>
                   Certificates

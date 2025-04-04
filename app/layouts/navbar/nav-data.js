@@ -2,10 +2,6 @@ import config from '~/config.json'
 
 export const navLinks = [
   {
-    label: 'Activity Feed',
-    pathname: '/articles',
-  },
-  {
     label: 'Details',
     pathname: '/#details',
   },
@@ -37,5 +33,9 @@ export const socialLinks = [
     url: `https://youtube.com/${config.youtube}`,
     icon: 'youtube',
   },
-
+  {
+    label: 'try',
+    url: `https://youtube.com/${config.youtube}`,
+    icon: 'try',
+  },
 ];
