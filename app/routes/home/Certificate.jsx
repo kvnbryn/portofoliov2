@@ -17,7 +17,7 @@ export const Certificates = () => {
     },
     {
       title: "Dasar Visualisasi Data",
-      image: "/app/assets/a.jpg",
+      image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/cert/a.jpg",
       link: "https://www.dicoding.com/certificates/0LZ04NNJ3P65",
       legalitas: "Dasar Visualisasi Data",
       description: "Recognized for outstanding performance in the program.",
