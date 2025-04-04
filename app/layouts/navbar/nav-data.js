@@ -33,9 +33,4 @@ export const socialLinks = [
     url: `https://youtube.com/${config.youtube}`,
     icon: 'youtube',
   },
-  {
-    label: 'try',
-    url: `https://youtube.com/${config.youtube}`,
-    icon: 'try',
-  },
 ];
