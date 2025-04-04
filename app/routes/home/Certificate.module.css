@@ -2,9 +2,9 @@
   width: 100vw;
   min-height: 100vh;
   margin-top: 0.1px;
-  margin-bottom: 300px;
-  padding-top: 400px; /* Ditambah untuk memberi jarak dari atas */
-  padding-bottom: 137px;
+  margin-bottom: 1px;
+  padding-top: 300px; /* Ditambah untuk memberi jarak dari atas */
+  padding-bottom: 10px;
   display: flex;
   justify-content: center;
   @media (--mediaTablet) {

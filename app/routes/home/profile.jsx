@@ -28,8 +28,8 @@ const ProfileText = ({ visible, titleId }) => (
   Hello, I’m Kevin — a cybersecurity enthusiast based in Manado, Indonesia. I’m actively sharpening my skills through self-learning, exploring real-world vulnerabilities, and participating in CTF (Capture The Flag) challenges. I’m also proficient in Python and enjoy digging into low-level systems.
 </Text>
 <Text className={styles.description} data-visible={visible} size="l" as="p">
-  You can find some of my hands-on exercises and labs on{' '}
-  <Link href="https://tryhackme.com/p/kvnbryank" target="_blank" rel="noopener noreferrer">TryHackMe</Link>.
+  You can find some of my hands-on exercises on{' '}
+  <Link href="https://tryhackme.com/p/kvnbryank" target="_blank" rel="noopener noreferrer">TryHackMe (Click This)</Link>.
 </Text>
 <Text className={styles.description} data-visible={visible} size="l" as="p">
   I'm always eager to learn and contribute to the cybersecurity community. If you share the same passion or would like to explore a project together, feel free to reach out.

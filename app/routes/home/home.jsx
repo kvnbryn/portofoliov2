@@ -6,6 +6,7 @@ import { Certificates } from "./Certificate"
 import styles from "./home.module.css"
 import { Intro } from "./intro"
 import { Profile } from "./profile"
+import { Experience } from "./Experience"
 
 // Prefetch draco decoder wasm
 export const links = () => {
@@ -93,20 +94,12 @@ export const Home = () => {
         scrollIndicatorHidden={scrollIndicatorHidden}
       />
       <Certificates/>
+      <Experience/>
+
       <Profile
         sectionRef={details}
         visible={visibleSections.includes(details.current)}
         id="details"
-      />
-
-      <Live2d
-        modelUrl="https://api.adicw.cn/static/live2dModels/koharu/koharu.model.json"
-        style={{
-          position: "fixed",
-          bottom: "1px",
-          right: "10px",
-          zIndex: 4444,
-        }}
       />
     </div>
   );
