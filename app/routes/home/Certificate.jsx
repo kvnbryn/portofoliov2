@@ -36,6 +36,14 @@ export const Certificates = () => {
       legalitas: "Develop Skills for Research",
       description: "Completion of frontend web development program.",
     },
+    {
+      title: "Red Teaming - Tryhackme",
+      image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/cert/thm.png",
+      link: "https://tryhackme.com/certificate/THM-N2DXDMLG0O",
+      legalitas: "Red Teaming - Tryhackme",
+      description: "Completion of frontend web development program.",
+    },
+
   ];
 
   const [isHovered, setIsHovered] = useState(null);
