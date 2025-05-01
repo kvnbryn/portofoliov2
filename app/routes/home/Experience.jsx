@@ -11,8 +11,13 @@ export const Experience = () => {
     {
       title: "first bug",
       image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/exp/1.jpeg",
-      link: "https://app.kajabi.com/certificates/ec1b5c30",
       legalitas: "Sqli time-based error kemdikbud subdomain",
+      description: "Certification for optimizing listings in Google Play Store.",
+    },
+    {
+      title: "world rank",
+      image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/exp/WhatsApp%20Image%202025-05-01%20at%2001.06.48.jpeg",
+      legalitas: "Top 1 World Rank in TryHackme",
       description: "Certification for optimizing listings in Google Play Store.",
     }
   ];
