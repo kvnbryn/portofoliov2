@@ -29,7 +29,7 @@ const ProfileText = ({ visible, titleId }) => (
 </Text>
 <Text className={styles.description} data-visible={visible} size="l" as="p">
   You can find some of my hands-on exercises on{' '}
-  <Link href="https://tryhackme.com/p/kvnbryank" target="_blank" rel="noopener noreferrer">TryHackMe (Click This)</Link>.
+  <Link href="https://tryhackme.com/p/kazkiryu" target="_blank" rel="noopener noreferrer">TryHackMe (Click This)</Link>.
 </Text>
 <Text className={styles.description} data-visible={visible} size="l" as="p">
   I'm always eager to learn and contribute to the cybersecurity community. If you share the same passion or would like to explore a project together, feel free to reach out.
