@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react"
-import { BsLink45Deg, BsSearch } from "react-icons/bs"
-import { Divider } from "~/components/divider"
-import { Heading } from "~/components/heading"
-import { Section } from "~/components/section"
-import { Transition } from "~/components/transition"
-import styles from "./Experience.module.css"
+import { useEffect, useState } from "react";
+import { BsLink45Deg, BsSearch } from "react-icons/bs";
+import { Divider } from "~/components/divider";
+import { Heading } from "~/components/heading";
+import { Section } from "~/components/section";
+import { Transition } from "~/components/transition";
+import styles from "./Experience.module.css";
 
 export const Experience = () => {
   const certificates = [
@@ -19,6 +19,13 @@ export const Experience = () => {
       image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/exp/WhatsApp%20Image%202025-05-01%20at%2001.06.48.jpeg",
       legalitas: "Top 1 World Rank in TryHackme",
       description: "Certification for optimizing listings in Google Play Store.",
+    },
+    {
+      title: "Created organization website bpmfkmunsrat.pages.dev",
+      image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/exp/bpm.png",
+      link: "https://bpmfkmunsrat.pages.dev/",
+      legalitas: "Created organization website bpmfkmunsrat.pages.dev",
+      description: "Created organization website bpmfkmunsrat.pages.dev",
     }
   ];
 
@@ -80,12 +87,8 @@ export const Experience = () => {
                       alt={certificate.title || "Certificate"}
                     />
                     <div className={styles.previewContent}>
-                      <h4 className={styles.previewTitle}>
-                        {certificate.title}
-                      </h4>
-                      <p className={styles.previewDescription}>
-                        {certificate.description}
-                      </p>
+                      <h4 className={styles.previewTitle}>{certificate.title}</h4>
+                      <p className={styles.previewDescription}>{certificate.description}</p>
                     </div>
                     <div
                       className={`${styles.overlay} ${
@@ -100,10 +103,17 @@ export const Experience = () => {
                         >
                           <BsSearch className={styles.icon} />
                         </a>
+                        {certificate.link && (
+                          <a
+                            href={certificate.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <BsLink45Deg className={styles.icon} />
+                          </a>
+                        )}
                       </div>
-                      <p className={styles.legalitas}>
-                        {certificate.legalitas}
-                      </p>
+                      <p className={styles.legalitas}>{certificate.legalitas}</p>
                     </div>
                   </div>
                 </div>
