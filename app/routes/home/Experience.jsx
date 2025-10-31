@@ -1,5 +1,8 @@
+// portofoliov2-main/app/routes/home/Experience.jsx
+
 import { useEffect, useState } from "react";
 import { BsLink45Deg, BsSearch } from "react-icons/bs";
+import { Button } from "~/components/button";
 import { Divider } from "~/components/divider";
 import { Heading } from "~/components/heading";
 import { Section } from "~/components/section";
@@ -7,7 +10,7 @@ import { Transition } from "~/components/transition";
 import styles from "./Experience.module.css";
 
 export const Experience = () => {
-  const certificates = [
+  const allExperiences = [
     {
       title: "first bug",
       image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/exp/1.jpeg",
@@ -72,7 +75,8 @@ export const Experience = () => {
         <Transition in={isVisible} timeout={300}>
           {({ visible }) => (
             <div className={styles.certificatesGrid} data-visible={visible}>
-              {certificates.map((certificate, index) => (
+              {/* << PERUBAHAN DI SINI: Batasi hanya 4 item pertama */}
+              {allExperiences.slice(0, 4).map((experience, index) => (
                 <div
                   key={index}
                   className={styles.certificateBox}
@@ -83,12 +87,12 @@ export const Experience = () => {
                   <div className={styles.certificateContent}>
                     <img
                       className={styles.certificateImage}
-                      src={certificate.image}
-                      alt={certificate.title || "Certificate"}
+                      src={experience.image}
+                      alt={experience.title || "Experience"}
                     />
                     <div className={styles.previewContent}>
-                      <h4 className={styles.previewTitle}>{certificate.title}</h4>
-                      <p className={styles.previewDescription}>{certificate.description}</p>
+                      <h4 className={styles.previewTitle}>{experience.title}</h4>
+                      <p className={styles.previewDescription}>{experience.description}</p>
                     </div>
                     <div
                       className={`${styles.overlay} ${
@@ -97,15 +101,15 @@ export const Experience = () => {
                     >
                       <div className={styles.iconContainer}>
                         <a
-                          href={certificate.image}
+                          href={experience.image}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           <BsSearch className={styles.icon} />
                         </a>
-                        {certificate.link && (
+                        {experience.link && (
                           <a
-                            href={certificate.link}
+                            href={experience.link}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
@@ -113,7 +117,7 @@ export const Experience = () => {
                           </a>
                         )}
                       </div>
-                      <p className={styles.legalitas}>{certificate.legalitas}</p>
+                      <p className={styles.legalitas}>{experience.legalitas}</p>
                     </div>
                   </div>
                 </div>
@@ -121,6 +125,16 @@ export const Experience = () => {
             </div>
           )}
         </Transition>
+        <div className={styles.seeAllButtonContainer}>
+          <Button
+            secondary
+            iconHoverShift
+            href="/experiences"
+            icon="chevron-right"
+          >
+            View All Experiences
+          </Button>
+        </div>
       </div>
     </Section>
   );

@@ -1,0 +1,6 @@
+// app/routes/experiences_._index/experiences.data.js
+export const experiencesData = [
+  { slug: 'first-bug-kemdikbud', title: "First Bug Found", description: "Menemukan celah keamanan SQL Injection (time-based error) pada salah satu subdomain Kemdikbud.", image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/exp/1.jpeg", date: "2024-03-15" },
+  { slug: 'tryhackme-world-rank', title: "Top 1 World Rank", description: "Mencapai peringkat #1 dunia di platform pembelajaran keamanan siber TryHackMe.", image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/exp/WhatsApp%20Image%202025-05-01%20at%2001.06.48.jpeg", date: "2025-05-01" },
+  { slug: 'organization-website-bpmf', title: "Website Organisasi BPMF", description: "Membangun dan mendeploy website untuk organisasi Badan Perwakilan Mahasiswa Fakultas Kedokteran Unsrat.", image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/exp/bpm.png", date: "2024-08-10" },
+];

@@ -1,0 +1,23 @@
+---
+title: Penemuan SQL Injection di Subdomain Kemdikbud
+abstract: Sebuah analisis mendalam tentang penemuan kerentanan SQL Injection jenis time-based blind pada salah satu aset digital milik Kementerian Pendidikan dan Kebudayaan.
+date: '2024-03-15'
+banner: https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/exp/1.jpeg
+---
+
+## Latar Belakang
+
+Pada tanggal 15 Maret 2024, saat melakukan kegiatan *bug hunting* secara etis, saya menemukan sebuah kerentanan keamanan pada salah satu subdomain yang berada di bawah naungan Kementerian Pendidikan dan Kebudayaan (Kemdikbud). Kerentanan yang ditemukan adalah *SQL Injection* dengan tipe *time-based blind*.
+
+### Apa itu Time-Based Blind SQL Injection?
+
+Berbeda dengan SQL Injection biasa yang langsung menampilkan data atau error, tipe *blind* tidak memberikan respons langsung. Penyerang harus menyimpulkan informasi bit demi bit berdasarkan respons waktu dari server. Jika server merespons lebih lama dari biasanya setelah disisipkan *payload* tertentu, itu menandakan bahwa kondisi dalam *payload* tersebut adalah benar.
+
+## Proses Penemuan
+
+Kerentanan ini ditemukan pada parameter URL yang tidak divalidasi dengan benar. Dengan menyisipkan *payload* yang mengandung fungsi `SLEEP()` atau `BENCHMARK()`, saya dapat memaksa database untuk berhenti sejenak sebelum memberikan respons.
+
+Contoh *payload* sederhana yang digunakan:
+
+```sql
+' AND (SELECT * FROM (SELECT(SLEEP(5)))a) AND '1'='1

@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react"
-import { BsLink45Deg, BsSearch } from "react-icons/bs"
-import { Divider } from "~/components/divider"
-import { Heading } from "~/components/heading"
-import { Section } from "~/components/section"
-import { Transition } from "~/components/transition"
-import styles from "./Certificate.module.css"
+// portofoliov2-main/app/routes/home/Certificate.jsx
+
+import { useEffect, useState } from "react";
+import { BsLink45Deg, BsSearch } from "react-icons/bs";
+import { Button } from "~/components/button";
+import { Divider } from "~/components/divider";
+import { Heading } from "~/components/heading";
+import { Section } from "~/components/section";
+import { Transition } from "~/components/transition";
+import styles from "./Certificate.module.css";
 
 export const Certificates = () => {
-  const certificates = [
+  const allCertificates = [
     {
       title: "C3SA Certificate",
       image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/cert/cert1.jpg",
@@ -43,7 +46,6 @@ export const Certificates = () => {
       legalitas: "Red Teaming - Tryhackme",
       description: "Completion of frontend web development program.",
     },
-
   ];
 
   const [isHovered, setIsHovered] = useState(null);
@@ -89,7 +91,8 @@ export const Certificates = () => {
         <Transition in={isVisible} timeout={300}>
           {({ visible }) => (
             <div className={styles.certificatesGrid} data-visible={visible}>
-              {certificates.map((certificate, index) => (
+              {/* << PERUBAHAN DI SINI: Batasi hanya 4 item pertama */}
+              {allCertificates.slice(0, 4).map((certificate, index) => (
                 <div
                   key={index}
                   className={styles.certificateBox}
@@ -142,6 +145,16 @@ export const Certificates = () => {
             </div>
           )}
         </Transition>
+        <div className={styles.seeAllButtonContainer}>
+          <Button
+            secondary
+            iconHoverShift
+            href="/certificates"
+            icon="chevron-right"
+          >
+            View All Certificates
+          </Button>
+        </div>
       </div>
     </Section>
   );

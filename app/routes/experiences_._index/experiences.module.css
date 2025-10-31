@@ -1,0 +1,12 @@
+/* app/routes/experiences_._index/experiences.module.css */
+.experiences { display: flex; flex-direction: column; align-items: center; min-height: 100%; }
+.content { width: 100%; max-width: var(--maxWidthL); padding-top: var(--space4XL); padding-bottom: var(--space4XL); padding-left: var(--spaceOuter); padding-right: var(--spaceOuter); @media (--mediaMobile), (--mediaMobileLS) { padding-top: var(--mobileNavOffset); } }
+.header { padding-bottom: var(--space2XL); }
+.heading { white-space: nowrap; overflow: hidden; }
+.list { display: grid; grid-template-columns: 100%; }
+.post { --postBorder: 1px solid color-mix(in lab, var(--text) 10%, transparent); position: relative; isolation: isolate; border-top: var(--postBorder); &:last-child { border-bottom: var(--postBorder); } &:global { opacity: 0; animation: fade-in var(--durationL) ease var(--delay) forwards; } }
+.postLink { display: flex; align-items: center; gap: var(--space4XL); padding: var(--space3XL) 0; text-decoration: none; color: inherit; position: relative; &::before { content: ''; position: absolute; inset: var(--spaceS) calc(var(--spaceS) * -1); transform: scale3d(0, 1, 1); transform-origin: right; background-color: color-mix(in lab, var(--text) 5%, transparent); transition: transform var(--durationM) var(--bezierFastoutSlowin); z-index: -1; } @media (--mediaUseMotion) { &:hover::before { transform: scale3d(1, 1, 1); transform-origin: left; } } @media (--mediaTablet) { flex-direction: column; align-items: flex-start; } }
+.postImage { width: 400px; height: 250px; flex-shrink: 0; clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%); background: color-mix(in lab, var(--text) 10%, transparent); & img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--durationM) var(--bezierFastoutSlowin); } .postLink:hover & img { transform: scale(1.05); } @media (--mediaTablet) { width: 100%; height: 260px; } }
+.postDetails { flex-grow: 1; display: grid; gap: var(--spaceM); }
+.postDate { display: grid; grid-template-columns: 64px 1fr; gap: var(--spaceM); align-items: center; color: var(--primary); justify-self: stretch; }
+.postFooter { display: flex; }

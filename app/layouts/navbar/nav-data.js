@@ -1,3 +1,5 @@
+// portofoliov2-main/app/layouts/navbar/nav-data.js
+
 import config from '~/config.json'
 
 export const navLinks = [
@@ -9,7 +11,6 @@ export const navLinks = [
     label: 'Contact',
     pathname: '/contact',
   },
-  
 ];
 
 export const socialLinks = [
