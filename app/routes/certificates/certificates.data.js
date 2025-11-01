@@ -24,7 +24,7 @@ export const certificatesData = [
   },
   {
     title: "C3SA Certificate",
-    description: "Sertifikasi untuk mengoptimalkan listing di Google Play Store.",
+    description: "Sertifikat penyelesaian program C3SA Premium Edition yang menguji kemampuan praktis dalam keamanan aplikasi dan teknik pengujian keamanan.",
     image: "https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/cert/cert1.jpg",
     link: "https://app.kajabi.com/certificates/ec1b5c30",
     date: "2025-01-06",
