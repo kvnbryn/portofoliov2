@@ -1,23 +1,33 @@
 ---
-title: Penemuan SQL Injection di Subdomain Kemdikbud
-abstract: Sebuah analisis mendalam tentang penemuan kerentanan SQL Injection jenis time-based blind pada salah satu aset digital milik Kementerian Pendidikan dan Kebudayaan.
-date: '2024-03-15'
+title: First Bug — Kemdikbud
+abstract: Menemukan dan melaporkan kerentanan SQL Injection (time-based) pada salah satu URL Kemdikbud; laporan telah disampaikan dan ditindaklanjuti oleh pihak terkait.
+date: '2025-01-18'
 banner: https://raw.githubusercontent.com/kvnbryn/assetsPortfolio/refs/heads/main/exp/1.jpeg
 ---
 
-## Latar Belakang
+## Ringkasan
 
-Pada tanggal 15 Maret 2024, saat melakukan kegiatan *bug hunting* secara etis, saya menemukan sebuah kerentanan keamanan pada salah satu subdomain yang berada di bawah naungan Kementerian Pendidikan dan Kebudayaan (Kemdikbud). Kerentanan yang ditemukan adalah *SQL Injection* dengan tipe *time-based blind*.
+Dalam salah satu aktivitas peninjauan keamanan, saya menemukan indikasi error SQL pada parameter sebuah URL di situs Kemdikbud. Setelah pengamatan dan pengujian lanjutan dengan metoda yang aman dan terkontrol, hasil analisis menunjukkan pola perilaku yang konsisten dengan **SQL Injection (time-based)**.
 
-### Apa itu Time-Based Blind SQL Injection?
+---
 
-Berbeda dengan SQL Injection biasa yang langsung menampilkan data atau error, tipe *blind* tidak memberikan respons langsung. Penyerang harus menyimpulkan informasi bit demi bit berdasarkan respons waktu dari server. Jika server merespons lebih lama dari biasanya setelah disisipkan *payload* tertentu, itu menandakan bahwa kondisi dalam *payload* tersebut adalah benar.
+## Tindakan yang Dilakukan
 
-## Proses Penemuan
+Saya melakukan langkah-langkah berikut dengan prinsip _responsible disclosure_:
+- Mencatat bukti perilaku (error dan respons waktu) tanpa memanfaatkan atau mengeksekusi payload berbahaya di lingkungan produksi.
+- Menyusun laporan yang ringkas dan jelas berisi temuan, bukti non-eksploitasi, dan rekomendasi umum.
+- Mengirimkan laporan tersebut melalui saluran komunikasi resmi (email) kepada tim keamanan/administrator situs terkait.
 
-Kerentanan ini ditemukan pada parameter URL yang tidak divalidasi dengan benar. Dengan menyisipkan *payload* yang mengandung fungsi `SLEEP()` atau `BENCHMARK()`, saya dapat memaksa database untuk berhenti sejenak sebelum memberikan respons.
+Pihak terkait telah merespons laporan tersebut dan menyatakan akan melakukan perbaikan.
 
-Contoh *payload* sederhana yang digunakan:
+---
 
-```sql
-' AND (SELECT * FROM (SELECT(SLEEP(5)))a) AND '1'='1
+## Refleksi
+
+Pengalaman ini menguatkan pentingnya pendekatan etis dalam penemuan kerentanan: mencatat temuan secara bertanggung jawab, berkomunikasi dengan jelas kepada pemilik sistem, dan menunggu perbaikan sebelum melakukan tindakan lebih lanjut. Selain aspek teknis, keterampilan komunikasi dan dokumentasi menjadi krusial agar laporan dapat segera ditindaklanjuti.
+
+---
+
+## Catatan
+
+Semua aktivitas dilaksanakan dengan tujuan perbaikan dan sesuai prinsip etika penanganan kerentanan. Informasi teknis sensitif sengaja tidak disertakan di sini untuk menjaga keamanan dan bertanggung jawab terhadap sistem yang terkena dampak.
